@@ -259,6 +259,14 @@ export let HpxImageSurvey = (function() {
                 }
             }
 
+            // HiPS order min
+            let hipsOrderMin = metadata.hips_order_min;
+            if (hipsOrderMin === undefined) {
+                hipsOrderMin = 3;
+            } else {
+                hipsOrderMin = +hipsOrderMin;
+            }
+
             // HiPS tile size
             let tileSize = null;
             if (metadata.hips_tile_width === undefined) {
@@ -333,7 +341,8 @@ export let HpxImageSurvey = (function() {
                     minCutout: propertiesDefaultMinCut,
                     maxCutout: propertiesDefaultMaxCut,
                     bitpix: bitpix,
-                    skyFraction: skyFraction
+                    skyFraction: skyFraction,
+                    minOrder: hipsOrderMin
                 };
             } else {
                 self.properties = {
@@ -342,7 +351,8 @@ export let HpxImageSurvey = (function() {
                     frame: frame,
                     tileSize: tileSize,
                     formats: tileFormats,
-                    skyFraction: skyFraction
+                    skyFraction: skyFraction,
+                    minOrder: hipsOrderMin
                 };
             }
 

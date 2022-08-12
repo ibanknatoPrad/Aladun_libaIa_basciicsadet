@@ -24,13 +24,12 @@ module.exports = {
         asyncWebAssembly: true
     },
     optimization: {
-        minimize: false,
-        /*
+        //minimize: false,
         minimizer: [new TerserPlugin({
             terserOptions: {
                 safari10: true
             }
-        })],*/
+        })],
     },
     plugins: [
         // WebGL2 app
@@ -135,5 +134,5 @@ module.exports = {
     },
     //mode: 'development',
     mode: 'production',
-    devtool: 'source-map'
+    //devtool: 'source-map'
 };
